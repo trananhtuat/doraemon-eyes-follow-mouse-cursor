@@ -1,0 +1,201 @@
+:root {
+  --bg: #ddb551;
+  --main-color: #51a1c4;
+  --red: #b13f54;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  cursor: url('./mouse.png'), default;
+}
+
+.doraemon {
+  --size: 500px;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  position: relative;
+  transition: background-color 1s ease;
+}
+
+.face:hover {
+  background-color: #d6c2e8;
+  transition: background-color 5s ease;
+}
+
+.white {
+  --size: 400px;
+  width: var(--size);
+  height: calc(var(--size) - 62px);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - var(--size) / 2);
+  background-color: var(--white);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+}
+
+.eye {
+  width: 130px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  position: absolute;
+  top: -75px;
+}
+
+.eye.left {
+  left: calc(50% - 130px);
+}
+
+.eye.right {
+  right: calc(50% - 130px);
+}
+
+.eye-black {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - var(--size) / 2);
+  transform-origin: top;
+}
+
+.eye-black::after {
+  content: "";
+  --size: 20px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--white);
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 10px);
+}
+
+.nose {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--red);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - var(--size) / 2);
+  top: 50px;
+}
+
+.nose::after {
+  --size: 20px;
+  content: "";
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--white);
+  position: absolute;
+  top: 10px;
+  left: 20%;
+}
+
+.mouth {
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  position: absolute;
+  bottom: 90px;
+  left: calc(50% - var(--size) / 2);
+  background-color: var(--red);
+  transform-origin: top;
+  transition: all 1s ease;
+}
+
+.face:hover .mouth {
+  border-bottom: 0px;
+  width: calc(var(--size) * 6);
+  left: calc(50% - var(--size) * 6 / 2);
+  transition: all 4s ease;
+}
+
+.mouth::before {
+  content: "";
+  width: 2px;
+  height: 106px;
+  background-color: var(--black);
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 1px);
+}
+
+.mustache {
+  position: absolute;
+  height: 2px;
+  width: 150px;
+  top: 120px;
+  background-color: var(--black);
+}
+
+.mustache.left {
+  left: 0px;
+  transform-origin: right;
+  transform: rotate(20deg);
+}
+
+.mustache.right {
+  right: 0px;
+  transform-origin: left;
+  transform: rotate(-20deg);
+}
+
+.mustache.two {
+  top: 145px;
+}
+
+.mustache.three {
+  top: 170px;
+}
+
+.mustache.left.two {
+  left: -10px;
+  transform: rotate(0deg);
+}
+
+.mustache.left.three {
+  left: 0px;
+  transform: rotate(-20deg);
+}
+
+.mustache.right.two {
+  right: -10px;
+  transform: rotate(0deg);
+}
+
+.mustache.right.three {
+  right: 0px;
+  transform: rotate(20deg);
+}
